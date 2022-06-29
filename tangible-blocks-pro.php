@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Tangible Blocks Pro
+ * Plugin Name: Tangible Blocks - Pro
  * Plugin URI: https://blocks.tangible.one/pro
- * Description: Extend Tangible Blocks with Pro features: third-party plugin integrations (Easy Digital Downloads, Events Calendar, Gravity Forms, LearnDash, LifterLMS, WooCommerce); Form module; cloud access
+ * Description: Extend Tangible Blocks with Pro features: third-party plugin integrations (Easy Digital Downloads, Events Calendar, Gravity Forms, LearnDash, LifterLMS, WooCommerce); Form module; Cloud access
  * Version: 3.0.0
  * Author: Team Tangible
  * Author URI: https://teamtangible.com
@@ -12,6 +12,7 @@
 define( 'TANGIBLE_BLOCKS_PRO', '3.0.0' );
 
 require_once __DIR__ . '/vendor/tangible/plugin-framework/index.php';
+require_once __DIR__ . '/vendor/tangible/plugin-updater/index.php';
 require_once __DIR__ . '/vendor/tangible/template-system-pro/index.php';
 
 /**
@@ -39,6 +40,12 @@ add_action('plugins_loaded', function() {
   ]);
 
   tangible_blocks_pro( $plugin );
+
+  tangible_plugin_updater()->register_plugin([
+    'name' => $plugin->name,
+    'file' => __FILE__,
+    // 'license' => ''
+  ]);
 
   // Features loaded will have $framework and $plugin in their scope
 
