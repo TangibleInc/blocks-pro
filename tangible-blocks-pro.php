@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Tangible Blocks - Pro
- * Plugin URI: https://blocks.tangible.one/pro
+ * Plugin URI: https://tangibleblocks.com/pro
  * Description: Extend Tangible Blocks with Pro features: third-party plugin integrations (Easy Digital Downloads, Events Calendar, Gravity Forms, LearnDash, LifterLMS, WooCommerce); Form module; Cloud access
  * Version: 3.0.0
  * Author: Team Tangible
@@ -39,6 +39,16 @@ add_action('plugins_loaded', function() {
     'assets_url'     => plugins_url( '/assets', __FILE__ ),
   ]);
 
+  $plugin->register_dependencies([
+    'tangible-blocks/tangible-blocks.php' => [
+      'title' => 'Tangible Blocks',
+      'url' => 'https://tangibleblocks.com/',
+      'fallback_check' => function() {
+        return function_exists('tangible_blocks');
+      }
+    ]
+  ]);
+
   tangible_blocks_pro( $plugin );
 
   tangible_plugin_updater()->register_plugin([
@@ -46,6 +56,8 @@ add_action('plugins_loaded', function() {
     'file' => __FILE__,
     // 'license' => ''
   ]);
+
+  if (!$plugin->has_all_dependencies()) return;
 
   // Features loaded will have in their local scope: $framework, $plugin, ...
 
