@@ -2,6 +2,14 @@
   "repositories": [
     {
       "type": "vcs",
+      "url": "git@bitbucket.org:/tangibleinc/betterdash-module.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@bitbucket.org:/tangibleinc/betterlifter-module.git"
+    },
+    {
+      "type": "vcs",
       "url": "git@bitbucket.org:/tangibleinc/tangible-plugin-framework.git"
     },
     {
@@ -14,6 +22,8 @@
     }
   ],
   "require": {
+    "tangible/betterdash": "dev-master",
+    "tangible/betterlifter": "dev-master",
     "tangible/plugin-framework": "dev-variant/without-updater",
     "tangible/plugin-updater": "dev-main",
     "tangible/template-system-pro": "dev-main"

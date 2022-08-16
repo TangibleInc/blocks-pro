@@ -9,7 +9,7 @@
  * License: GPLv2 or later
  */
 
-define( 'TANGIBLE_BLOCKS_PRO', '3.0.0' );
+define( 'TANGIBLE_BLOCKS_PRO_VERSION', '3.0.0' );
 
 require_once __DIR__ . '/vendor/tangible/plugin-framework/index.php';
 require_once __DIR__ . '/vendor/tangible/plugin-updater/index.php';
@@ -31,7 +31,7 @@ add_action('plugins_loaded', function() {
     'title'          => 'Tangible Blocks Pro',
     'setting_prefix' => 'tangible_blocks_pro',
 
-    'version'        => TANGIBLE_BLOCKS_PRO,
+    'version'        => TANGIBLE_BLOCKS_PRO_VERSION,
     'file_path'      => __FILE__,
     'base_path'      => plugin_basename( __FILE__ ),
     'dir_path'       => plugin_dir_path( __FILE__ ),
