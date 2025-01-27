@@ -21,7 +21,7 @@ framework\register_admin_notice(function() use ($plugin) {
   <div class="notice notice-info is-dismissible"
     data-tangible-admin-notice="<?php echo $welcome_notice_key; ?>"
   >
-    <p>Welcome to <b><?php echo $plugin->title; ?></b>. Please see the <a href="<?php echo framework\get_settings_tab_url($plugin, 'welcome'); ?>&dismiss_admin_notice=true">plugin settings page</a> to get started.</p>
+    <p>Welcome to <b><?php echo $plugin->title; ?></b>. Please see the <a href="<?php echo framework\get_plugin_settings_page_url($plugin, 'welcome'); ?>&dismiss_admin_notice=true">plugin settings page</a> to get started.</p>
   </div>
   <?php
 
