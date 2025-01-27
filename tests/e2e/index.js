@@ -24,7 +24,7 @@ describe('Admin', () => {
   const plugins = [
     ['Tangible Blocks', 'tangible-blocks/tangible-blocks'],
     ['Tangible Blocks Editor', 'tangible-blocks-editor/tangible-blocks-editor'],
-    ['Tangible Blocks Pro', 'tangible-blocks/tangible-blocks-pro'],
+    ['Tangible Blocks Pro', 'tangible-blocks-pro/tangible-blocks-pro'],
     ['Tangible E2E', 'tangible-e2e-plugin/index'],
     ['Elementor', 'elementor/elementor'],
     ['Beaver Builder', 'beaver-builder-lite-version/fl-builder'],
@@ -128,6 +128,16 @@ describe('Block post type', () => {
     await admin.visitAdminPage('/post-new.php?post_type=tangible_block')
     const heading = await page.getByRole('heading', {
       name: ' Add New Block ',
+    })
+    await expect(heading).toBeVisible()
+  })
+})
+
+describe('Plugin settings page', () => {
+  test('Can be visited', async ({ admin, page }) => {
+    await admin.visitAdminPage('/options-general.php?page=tangible-blocks-pro-settings')
+    const heading = await page.getByRole('heading', {
+      name: 'Tangible Blocks Pro',
     })
     await expect(heading).toBeVisible()
   })
