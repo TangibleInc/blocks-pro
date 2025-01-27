@@ -1,6 +1,6 @@
 <?php
 
-return function() use ($framework, $plugin) {
+return function() {
 
   ?>
   <h2>Getting Started</h2>
