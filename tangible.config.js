@@ -18,7 +18,11 @@ export default {
       dest: 'assets/build/admin.min.css',
     },
   ],
-  format: ['includes', 'assets/src'],
+  format: [
+    'assets/src',
+    'includes',
+    '*.{php,js,json}'
+  ],
   archive: {
     root: 'tangible-blocks-pro',
     src: [
@@ -31,11 +35,18 @@ export default {
     dest: 'publish/tangible-blocks-pro.zip',
     exclude: [
       'assets/src',
+      'docs',
+      'vendor/tangible/*/vendor',
+      'vendor/tangible-dev/',
+      '.git',
+      '**/artifacts',
+      '**/publish',
+      '**/node_modules',
       '**/tests',
       '**/*.scss',
       '**/*.jsx',
       '**/*.ts',
-      '**/*.tsx'
+      '**/*.tsx',
     ],
   },
   /**
@@ -87,8 +98,8 @@ export default {
       dest: 'vendor/tangible/updater',
       branch: 'main',
     },
-  ],
-  installDev: [
+
+    // For dev purpose but install by default because it's required for editing blocks
     {
       git: 'git@github.com:tangibleinc/blocks',
       dest: 'vendor/tangible-dev/blocks',
@@ -99,6 +110,8 @@ export default {
       dest: 'vendor/tangible-dev/blocks-editor',
       branch: 'main',
     },
+  ],
+  installDev: [
     // Third-party plugins
     {
       zip: 'https://downloads.wordpress.org/plugin/advanced-custom-fields.latest-stable.zip',
