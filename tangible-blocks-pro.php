@@ -3,7 +3,7 @@
  * Plugin Name: Tangible Blocks - Pro
  * Plugin URI: https://tangibleblocks.com/pro
  * Description: Extend Tangible Blocks with Pro features: third-party plugin integrations - Easy Digital Downloads, Events Calendar, Gravity Forms, LearnDash, LifterLMS, WooCommerce
- * Version: 3.0.6
+ * Version: 3.1.0
  * Author: Team Tangible
  * Author URI: https://teamtangible.com
  * License: GPLv2 or later
@@ -11,7 +11,7 @@
 use tangible\framework;
 use tangible\updater;
 
-define( 'TANGIBLE_BLOCKS_PRO_VERSION', '3.0.6' );
+define( 'TANGIBLE_BLOCKS_PRO_VERSION', '3.1.0' );
 
 $module_path = is_dir(
   ($path = __DIR__ . '/../../tangible') // Module
