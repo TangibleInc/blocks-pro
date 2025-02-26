@@ -10,20 +10,32 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-        # List all private repositories as dependencies
+      # Install all private repositories as dependencies
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           repository: "TangibleInc/betterdash-module"
-          token: ${{ secrets.TANGIBLE_PIPELINE_ACCESS_TOKEN }}
           path: "vendor/tangible/betterdash"
+          token: ${{ secrets.TANGIBLE_PIPELINE_ACCESS_TOKEN }}
+          fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           repository: "TangibleInc/betterlifter-module"
-          token: ${{ secrets.TANGIBLE_PIPELINE_ACCESS_TOKEN }}
           path: "vendor/tangible/betterlifter"
+          token: ${{ secrets.TANGIBLE_PIPELINE_ACCESS_TOKEN }}
+          fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           repository: "TangibleInc/fields-pro"
-          token: ${{ secrets.TANGIBLE_PIPELINE_ACCESS_TOKEN }}
           path: "vendor/tangible/fields-pro"
+          token: ${{ secrets.TANGIBLE_PIPELINE_ACCESS_TOKEN }}
+          fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           repository: "TangibleInc/template-system-pro"
           token: ${{ secrets.TANGIBLE_PIPELINE_ACCESS_TOKEN }}
           path: "vendor/tangible/template-system-pro"
