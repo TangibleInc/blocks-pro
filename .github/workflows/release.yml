@@ -16,7 +16,7 @@ jobs:
         uses: oven-sh/setup-bun@v2
       - name: Install dependencies
         run: |
-          echo "https://$ACCESS_TOKEN@github.com" >> $HOME/.git-credentials
+          echo "https://TangibleInc:$ACCESS_TOKEN@github.com" >> $HOME/.git-credentials
           git config --global credential.helper store
           bun install
           rm -rf ${HOME}/.git-credentials
