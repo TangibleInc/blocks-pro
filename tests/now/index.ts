@@ -1,5 +1,5 @@
 import { test, is, ok, run } from 'testra'
-import { getServer } from '@tangible/env'
+import { getServer } from './server.ts'
 
 /**
  * For syntax highlight of PHP in template strings, install:
@@ -18,7 +18,7 @@ export default run(async () => {
     phpVersion: process.env.PHP_VERSION || '8.2',
     mappings: process.env.TEST_ARCHIVE
       ? {
-          'wp-content/plugins/tangible-blocks-pro': '../publish/tangible-blocks-pro',
+          'wp-content/plugins/tangible-blocks-pro': '../../publish/tangible-blocks-pro',
         }
       : {},
     reset: true,

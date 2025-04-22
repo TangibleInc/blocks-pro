@@ -112,6 +112,17 @@ export default {
     },
   ],
   installDev: [
+    {
+      git: 'git@github.com:tangibleinc/loops-and-logic',
+      dest: 'vendor/tangible-dev/loops-and-logic',
+      branch: 'main',
+    },
+    {
+      git: 'git@github.com:tangibleinc/loops-and-logic-pro',
+      dest: 'vendor/tangible-dev/loops-and-logic-pro',
+      branch: 'main',
+    },
+
     // Third-party plugins
     {
       zip: 'https://downloads.wordpress.org/plugin/advanced-custom-fields.latest-stable.zip',
@@ -140,6 +151,20 @@ export default {
     {
       zip: 'https://downloads.wordpress.org/plugin/woocommerce.latest-stable.zip',
       dest: 'vendor/tangible-dev/woocommerce'
+    },
+
+    // LearnDash
+    {
+      zip: 'https://static.tangible.one/vendor/sfwd-lms.zip',
+      dest: 'vendor/tangible-dev/sfwd-lms'
+    },
+    {
+      zip: 'https://static.tangible.one/vendor/learndash-course-grid.zip',
+      dest: 'vendor/tangible-dev/learndash-course-grid'
+    },
+    {
+      zip: 'https://static.tangible.one/vendor/learndash-hub.zip',
+      dest: 'vendor/tangible-dev/learndash-hub'
     },
   ],
 }
